@@ -14,11 +14,7 @@ struct Projects: Decodable {
     enum CodingKeys: String, CodingKey {
         case caseStudies = "case_studies"
     }
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        caseStudies = try container.decode([CaseStudies].self, forKey: .caseStudies)
-    }
+
 }
 
 struct CaseStudies: Decodable {
@@ -27,7 +23,7 @@ struct CaseStudies: Decodable {
     let teaser: String
     let vertical: String
     let isEnterprise: Bool
-    let title: String?
+    let title: String
     let heroImage: String
     let sections: [Sections]
     
@@ -41,60 +37,51 @@ struct CaseStudies: Decodable {
         case heroImage = "hero_image"
         case sections
     }
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        id = try container.decode(Int.self, forKey: .id)
-        client = try container.decode(String.self, forKey: .client)
-        teaser = try container.decode(String.self, forKey: .teaser)
-        vertical = try container.decode(String.self, forKey: .vertical)
-        isEnterprise = try container.decode(Bool.self, forKey: .isEnterprise)
-        title = try container.decode(String?.self, forKey: .title)
-        heroImage = try container.decode(String.self, forKey: .heroImage)
-        sections = try container.decode([Sections].self, forKey: .sections)
-        
-    }
 }
 
 struct Sections: Decodable {
     let title: String?
-    let bodyElements: [BodyElements]
+    let bodyElements: [BodyElement]
     
     enum CodingKeys: String, CodingKey {
         case title
         case bodyElements = "body_elements"
     }
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        title = try container.decode(String?.self, forKey: .title)
-        bodyElements = try container.decode([BodyElements].self, forKey: .bodyElements)
-    }
 }
 
 
-struct BodyElements: Decodable {
-    let body: String
-    let image: BodyImage
-    
+enum BodyElement: Codable {
+    case bodyImage(BodyImage)
+    case title(String)
+
     init(from decoder: Decoder) throws {
-        var unkeyedContainer = try decoder.unkeyedContainer()
-        let singleContainer = try decoder.singleValueContainer()
-        body = try unkeyedContainer.decode(String.self)
-        image = try singleContainer.decode(BodyImage.self)
+        let container = try decoder.singleValueContainer()
+        if let title = try? container.decode(String.self) {
+            self = .title(title)
+            return
+        }
+        if let bodyImage = try? container.decode(BodyImage.self) {
+            self = .bodyImage(bodyImage)
+            return
+        }
+        throw DecodingError.typeMismatch(BodyElement.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Mismatch for BodyElement"))
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        switch self {
+        case .bodyImage(let bodyImage):
+            try container.encode(bodyImage)
+        case .title(let title):
+            try container.encode(title)
+        }
     }
 }
 
-struct BodyImage: Decodable {
-    let imageUrl: String
-    
+struct BodyImage: Codable {
+    let imageURL: String
+
     enum CodingKeys: String, CodingKey {
-        case imageUrl = "image_url"
+        case imageURL = "image_url"
     }
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        imageUrl = try container.decode(String.self, forKey: .imageUrl)
-    }
-    
 }
