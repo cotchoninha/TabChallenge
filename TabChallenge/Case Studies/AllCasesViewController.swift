@@ -10,10 +10,17 @@ import UIKit
 
 class AllCasesViewController: UIViewController {
 
+    @IBOutlet private weak var tabLogoImage: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupTabLogoImage()
+        }
+    
+    private func setupTabLogoImage() {
+        tabLogoImage.layer.cornerRadius = 8.0
+        tabLogoImage.clipsToBounds = true
     }
 
 
