@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		3BC225172484FB89000080B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC225162484FB89000080B8 /* AppDelegate.swift */; };
 		3BC225192484FB89000080B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC225182484FB89000080B8 /* SceneDelegate.swift */; };
-		3BC2251B2484FB89000080B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC2251A2484FB89000080B8 /* ViewController.swift */; };
-		3BC2251E2484FB89000080B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BC2251C2484FB89000080B8 /* Main.storyboard */; };
 		3BC225202484FB8C000080B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BC2251F2484FB8C000080B8 /* Assets.xcassets */; };
 		3BC225232484FB8C000080B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BC225212484FB8C000080B8 /* LaunchScreen.storyboard */; };
 		3BC225392484FB8C000080B8 /* TabChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC225382484FB8C000080B8 /* TabChallengeUITests.swift */; };
@@ -42,8 +40,6 @@
 		3BC225132484FB89000080B8 /* TabChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BC225162484FB89000080B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BC225182484FB89000080B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3BC2251A2484FB89000080B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3BC2251D2484FB89000080B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3BC2251F2484FB8C000080B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3BC225222484FB8C000080B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3BC225242484FB8C000080B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -111,8 +107,6 @@
 				3BC225462484FD43000080B8 /* Network Layer */,
 				3BC225162484FB89000080B8 /* AppDelegate.swift */,
 				3BC225182484FB89000080B8 /* SceneDelegate.swift */,
-				3BC2251A2484FB89000080B8 /* ViewController.swift */,
-				3BC2251C2484FB89000080B8 /* Main.storyboard */,
 				3BC2251F2484FB8C000080B8 /* Assets.xcassets */,
 				3BC225212484FB8C000080B8 /* LaunchScreen.storyboard */,
 				3BC225242484FB8C000080B8 /* Info.plist */,
@@ -143,7 +137,6 @@
 			children = (
 				3BC225472484FD75000080B8 /* NetworkOperations.swift */,
 				3BC225492484FFC8000080B8 /* NetworkModel.swift */,
-				3BC2254D2485A6F3000080B8 /* NetworkExtensions+Protocols.swift */,
 			);
 			path = "Network Layer";
 			sourceTree = "<group>";
@@ -264,7 +257,6 @@
 				3BC225232484FB8C000080B8 /* LaunchScreen.storyboard in Resources */,
 				3BC225202484FB8C000080B8 /* Assets.xcassets in Resources */,
 				3BC22553248671AA000080B8 /* AllCasesViewController.xib in Resources */,
-				3BC2251E2484FB89000080B8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,10 +281,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BC2254E2485A6F3000080B8 /* NetworkExtensions+Protocols.swift in Sources */,
 				3BC225482484FD75000080B8 /* NetworkOperations.swift in Sources */,
 				3BC22552248671AA000080B8 /* AllCasesViewController.swift in Sources */,
-				3BC2251B2484FB89000080B8 /* ViewController.swift in Sources */,
 				3BC225172484FB89000080B8 /* AppDelegate.swift in Sources */,
 				3BC2254A2484FFC8000080B8 /* NetworkModel.swift in Sources */,
 				3BC225192484FB89000080B8 /* SceneDelegate.swift in Sources */,
@@ -331,14 +321,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3BC2251C2484FB89000080B8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3BC2251D2484FB89000080B8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3BC225212484FB8C000080B8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
