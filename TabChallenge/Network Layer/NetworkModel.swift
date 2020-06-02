@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct Projects: Decodable {
+struct Projects: Decodable, Equatable {
+    
     let caseStudies: [CaseStudies]
     
     enum CodingKeys: String, CodingKey {
@@ -17,7 +18,7 @@ struct Projects: Decodable {
 
 }
 
-struct CaseStudies: Decodable {
+struct CaseStudies: Decodable, Equatable {
     let id: Int
     let client: String?
     let teaser: String
@@ -39,7 +40,7 @@ struct CaseStudies: Decodable {
     }
 }
 
-struct Sections: Decodable {
+struct Sections: Decodable, Equatable {
     let title: String?
     let bodyElements: [BodyElement]
     
@@ -50,7 +51,7 @@ struct Sections: Decodable {
 }
 
 
-enum BodyElement: Codable {
+enum BodyElement: Codable, Equatable {
     case bodyImage(BodyImage)
     case title(String)
 
@@ -78,7 +79,7 @@ enum BodyElement: Codable {
     }
 }
 
-struct BodyImage: Codable {
+struct BodyImage: Codable, Equatable {
     let imageURL: String
 
     enum CodingKeys: String, CodingKey {
