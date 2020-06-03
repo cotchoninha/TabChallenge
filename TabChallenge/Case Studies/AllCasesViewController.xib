@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AllCasesViewController" customModule="TabChallenge">
             <connections>
                 <outlet property="tabLogoImage" destination="KM2-3a-aFB" id="u5O-G9-K6I"/>
+                <outlet property="tableView" destination="fvm-zx-Ypi" id="9qN-8y-Gb7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
