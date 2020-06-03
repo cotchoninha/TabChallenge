@@ -8,17 +8,19 @@
 
 import UIKit
 
-final class AllCasesViewController: UIViewController {
-
+final class AllCasesViewController: UIViewController, AllCassesViewPresentable {
+    
     @IBOutlet private var tabLogoImage: UIImageView!
     @IBOutlet private var tableView: UITableView!
-    
+    private var presenter = AllCasesPresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTabLogoImage()
         setupTableView()
-        }
+        presenter.view = self
+        presenter.loadCaseStudies()
+    }
     
     private func setupTableView() {
         tableView.dataSource = self
@@ -30,6 +32,10 @@ final class AllCasesViewController: UIViewController {
         tabLogoImage.layer.cornerRadius = 8.0
         tabLogoImage.clipsToBounds = true
     }
+    
+    func reloadData() {
+        tableView.reloadData()
+    }
 }
 
 extension AllCasesViewController: UITableViewDelegate {
@@ -39,13 +45,15 @@ extension AllCasesViewController: UITableViewDelegate {
 extension AllCasesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return presenter.getNumberOfRowsInSection()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: AllCasesTableViewCell.reuseIdentifier, for: indexPath) as? AllCasesTableViewCell else {
             return UITableViewCell()
         }
+        let viewModels = presenter.getViewModels()
+        cell.configureView(with: viewModels[indexPath.row])
         return cell
         
     }
