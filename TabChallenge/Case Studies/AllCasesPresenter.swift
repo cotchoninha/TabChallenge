@@ -26,7 +26,7 @@ final class AllCasesPresenter {
     func loadCaseStudies() {
         networkOperations.requestCaseStudies { projects, error in
             if error != nil {
-                print("SHOW ERROR ALERT TO USER WITH RETRY BUUTTON")
+                print("SHOW ERROR ALERT TO USER WITH RETRY BUUTTON \(error?.localizedDescription)")
                 return
             }
             projects?.caseStudies.forEach({ caseStudie in
@@ -43,5 +43,5 @@ final class AllCasesPresenter {
     
     func getNumberOfRowsInSection() -> Int {
         return viewModels.count
-    }
+    }    
 }

@@ -21,10 +21,13 @@ final class AllCasesTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        containerView.layer.cornerRadius = 8.0
+        containerView.clipsToBounds = true
     }
 
     func configureView(with viewModel: AllCasesViewModel) {
         clientNameLabel.text = viewModel.clientName
+        projectImage.loadImage(url: viewModel.clientImage)
         teaserLabel.text = viewModel.teaser
     }
     
@@ -32,4 +35,16 @@ final class AllCasesTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+}
+
+extension UIImageView {
+    func loadImage(url: String) {
+        NetworkOperations().loadImage(url: url) { data, error in
+                guard let data = data else {
+                    print(print("SHOW ERROR ALERT TO USER WITH RETRY BUUTTON \(error?.localizedDescription)"))
+                    return
+                }
+                self.image = UIImage(data: data)
+        }
+    }
 }
