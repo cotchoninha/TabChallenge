@@ -12,7 +12,7 @@ final class AllCasesTableViewCell: UITableViewCell {
 
     @IBOutlet private var containerView: UIView!
     @IBOutlet private var clientNameLabel: UILabel!
-    @IBOutlet private var projectImage: UIImageView!
+    @IBOutlet private var projectImage: ImageLoader!
     @IBOutlet private var teaserLabel: UILabel!
     
     static let reuseIdentifier = "allCasesTableViewCell"
@@ -27,7 +27,11 @@ final class AllCasesTableViewCell: UITableViewCell {
 
     func configureView(with viewModel: AllCasesViewModel) {
         clientNameLabel.text = viewModel.clientName
-        projectImage.loadImage(url: viewModel.clientImage)
+        guard let url = URL(string: viewModel.clientImage) else {
+            return
+        }
+        projectImage.loadImageWithUrl(url)
+        projectImage.frame = projectImage.contentClippingRect
         teaserLabel.text = viewModel.teaser
     }
     
@@ -35,16 +39,4 @@ final class AllCasesTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-}
-
-extension UIImageView {
-    func loadImage(url: String) {
-        NetworkOperations().loadImage(url: url) { data, error in
-                guard let data = data else {
-                    print(print("SHOW ERROR ALERT TO USER WITH RETRY BUUTTON \(error?.localizedDescription)"))
-                    return
-                }
-                self.image = UIImage(data: data)
-        }
-    }
 }
