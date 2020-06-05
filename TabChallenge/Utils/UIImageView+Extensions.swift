@@ -9,6 +9,7 @@
 import UIKit
 
 extension UIImageView {
+    /// property that returns the size of the image inside the UIImageView.
     var contentClippingRect: CGRect {
         guard let image = image else { return bounds }
         guard contentMode == .scaleAspectFit else { return bounds }
@@ -36,7 +37,11 @@ class ImageLoader: UIImageView {
     var imageURL: URL?
 
     let activityIndicator = UIActivityIndicatorView()
-
+    
+    /// Function that loads image from url and cache it or retrieve it from the cache if it was already saved.
+    ///
+    /// - Parameters:
+    ///     - url: image url to be downloaded.
     func loadImageWithUrl(_ url: URL) {
 
         // setup activityIndicator...

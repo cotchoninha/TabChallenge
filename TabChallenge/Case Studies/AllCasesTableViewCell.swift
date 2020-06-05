@@ -23,6 +23,7 @@ final class AllCasesTableViewCell: UITableViewCell {
         super.awakeFromNib()
         containerView.layer.cornerRadius = 8.0
         containerView.clipsToBounds = true
+        setupProjectImage()
     }
 
     func configureView(with viewModel: AllCasesViewModel) {
@@ -31,12 +32,20 @@ final class AllCasesTableViewCell: UITableViewCell {
             return
         }
         projectImage.loadImageWithUrl(url)
-        projectImage.frame = projectImage.contentClippingRect
+//        setupProjectImage()
         teaserLabel.text = viewModel.teaser
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    private func setupProjectImage() {
+        projectImage.translatesAutoresizingMaskIntoConstraints = false
+        let constraints = [projectImage.heightAnchor.constraint(equalToConstant: projectImage.contentClippingRect.height), projectImage.topAnchor.constraint(equalTo: clientNameLabel.bottomAnchor, constant: 10), projectImage.bottomAnchor.constraint(equalTo: teaserLabel.topAnchor, constant: -16), projectImage.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -10), projectImage.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 10)]
+        NSLayoutConstraint.activate(constraints)
+        projectImage.contentMode = .scaleAspectFill
+        projectImage.layer.cornerRadius = 10.0
     }
     
 }
