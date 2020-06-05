@@ -98,6 +98,26 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		3B73C980248A89F7004C1CF2 /* All Cases */ = {
+			isa = PBXGroup;
+			children = (
+				3B27D68D2487EBE1009C371C /* AllCasesViewModel.swift */,
+				3B27D68B2487EAE5009C371C /* AllCasesPresenter.swift */,
+				3BC22550248671AA000080B8 /* AllCasesViewController.swift */,
+				3B27D6872486F513009C371C /* AllCasesTableViewCell.swift */,
+				3B27D6882486F513009C371C /* AllCasesTableViewCell.xib */,
+				3BC22551248671AA000080B8 /* AllCasesViewController.xib */,
+			);
+			path = "All Cases";
+			sourceTree = "<group>";
+		};
+		3B73C981248A8A06004C1CF2 /* Selected Case */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Selected Case";
+			sourceTree = "<group>";
+		};
 		3BC2250A2484FB89000080B8 = {
 			isa = PBXGroup;
 			children = (
@@ -163,12 +183,8 @@
 		3BC2254F24867113000080B8 /* Case Studies */ = {
 			isa = PBXGroup;
 			children = (
-				3B27D68D2487EBE1009C371C /* AllCasesViewModel.swift */,
-				3B27D68B2487EAE5009C371C /* AllCasesPresenter.swift */,
-				3BC22550248671AA000080B8 /* AllCasesViewController.swift */,
-				3B27D6872486F513009C371C /* AllCasesTableViewCell.swift */,
-				3B27D6882486F513009C371C /* AllCasesTableViewCell.xib */,
-				3BC22551248671AA000080B8 /* AllCasesViewController.xib */,
+				3B73C981248A8A06004C1CF2 /* Selected Case */,
+				3B73C980248A89F7004C1CF2 /* All Cases */,
 			);
 			path = "Case Studies";
 			sourceTree = "<group>";
