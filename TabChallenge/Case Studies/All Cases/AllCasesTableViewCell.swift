@@ -21,8 +21,7 @@ final class AllCasesTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        containerView.layer.cornerRadius = 8.0
-        containerView.clipsToBounds = true
+        setupContainerView()
         setupProjectImage()
     }
 
@@ -32,12 +31,16 @@ final class AllCasesTableViewCell: UITableViewCell {
             return
         }
         projectImage.loadImageWithUrl(url)
-//        setupProjectImage()
         teaserLabel.text = viewModel.teaser
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    private func setupContainerView() {
+        containerView.layer.cornerRadius = 8.0
+        containerView.layer.applySketchShadow()
     }
     
     private func setupProjectImage() {

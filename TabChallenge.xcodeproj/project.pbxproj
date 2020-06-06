@@ -13,6 +13,7 @@
 		3B27D68E2487EBE1009C371C /* AllCasesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B27D68D2487EBE1009C371C /* AllCasesViewModel.swift */; };
 		3B2CC3AF248BEAF800A3E187 /* SelectedCaseStudieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2CC3AD248BEAF800A3E187 /* SelectedCaseStudieViewController.swift */; };
 		3B2CC3B0248BEAF800A3E187 /* SelectedCaseStudieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B2CC3AE248BEAF800A3E187 /* SelectedCaseStudieViewController.xib */; };
+		3B2CC3B2248C16A300A3E187 /* CALayer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2CC3B1248C16A300A3E187 /* CALayer+Extensions.swift */; };
 		3B73C97F2489251D004C1CF2 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B73C97E2489251D004C1CF2 /* UIImageView+Extensions.swift */; };
 		3BC225172484FB89000080B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC225162484FB89000080B8 /* AppDelegate.swift */; };
 		3BC225192484FB89000080B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC225182484FB89000080B8 /* SceneDelegate.swift */; };
@@ -50,6 +51,7 @@
 		3B27D68D2487EBE1009C371C /* AllCasesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCasesViewModel.swift; sourceTree = "<group>"; };
 		3B2CC3AD248BEAF800A3E187 /* SelectedCaseStudieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCaseStudieViewController.swift; sourceTree = "<group>"; };
 		3B2CC3AE248BEAF800A3E187 /* SelectedCaseStudieViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectedCaseStudieViewController.xib; sourceTree = "<group>"; };
+		3B2CC3B1248C16A300A3E187 /* CALayer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extensions.swift"; sourceTree = "<group>"; };
 		3B73C97E2489251D004C1CF2 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		3BC225132484FB89000080B8 /* TabChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BC225162484FB89000080B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				3B73C97E2489251D004C1CF2 /* UIImageView+Extensions.swift */,
+				3B2CC3B1248C16A300A3E187 /* CALayer+Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				3B27D6892486F513009C371C /* AllCasesTableViewCell.swift in Sources */,
 				3BC225172484FB89000080B8 /* AppDelegate.swift in Sources */,
 				3BC2254A2484FFC8000080B8 /* NetworkModel.swift in Sources */,
+				3B2CC3B2248C16A300A3E187 /* CALayer+Extensions.swift in Sources */,
 				3B2CC3AF248BEAF800A3E187 /* SelectedCaseStudieViewController.swift in Sources */,
 				3B27D68E2487EBE1009C371C /* AllCasesViewModel.swift in Sources */,
 				3BC225192484FB89000080B8 /* SceneDelegate.swift in Sources */,
