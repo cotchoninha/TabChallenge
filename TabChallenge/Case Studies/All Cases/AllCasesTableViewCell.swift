@@ -34,10 +34,6 @@ final class AllCasesTableViewCell: UITableViewCell {
         teaserLabel.text = viewModel.teaser
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    
     private func setupContainerView() {
         containerView.layer.cornerRadius = 8.0
         containerView.layer.applySketchShadow()
