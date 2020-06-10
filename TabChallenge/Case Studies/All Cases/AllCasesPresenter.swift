@@ -18,6 +18,7 @@ final class AllCasesPresenter {
     
     private var viewModels: [AllCasesViewModel] = []
     private let networkOperations: NetworkOperations
+    private var caseStudies: [CaseStudies] = []
     
     init(networkOperations: NetworkOperations = NetworkOperations()) {
         self.networkOperations = networkOperations
@@ -29,8 +30,14 @@ final class AllCasesPresenter {
                 print("SHOW ERROR ALERT TO USER WITH RETRY BUUTTON \(error?.localizedDescription)")
                 return
             }
-            projects?.caseStudies.forEach({ caseStudie in
+            guard let caseStudies = projects?.caseStudies else {
+                print("there are no caseStudies available")
+                return
+            }
+            self.caseStudies = caseStudies
+            caseStudies.forEach({ caseStudie in
                 let vm = AllCasesViewModel(clientName: caseStudie.client ?? "", clientImage: caseStudie.heroImage, teaser: caseStudie.teaser)
+                
                 self.viewModels.append(vm)
             })
             self.view?.reloadData()
@@ -39,6 +46,11 @@ final class AllCasesPresenter {
     
     func getViewModels() -> [AllCasesViewModel] {
         return viewModels
+    }
+    
+    func getSelectedCaseViewModel(atRow: Int) -> SelectedCaseViewModel {
+        let viewModel = SelectedCaseViewModel(projectName: viewModels[atRow].clientName, selectedCase: caseStudies[atRow])
+        return viewModel
     }
     
     func getNumberOfRowsInSection() -> Int {

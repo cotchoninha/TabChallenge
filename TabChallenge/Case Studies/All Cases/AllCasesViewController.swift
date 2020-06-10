@@ -41,8 +41,10 @@ final class AllCasesViewController: UIViewController, AllCassesViewPresentable {
 extension AllCasesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedCaseStudiesVC = SelectedCaseViewController()
-        self.present(selectedCaseStudiesVC, animated: true, completion: nil)
+        let viewModel = presenter.getSelectedCaseViewModel(atRow: indexPath.row)
+        let selectedCasePresenter = SelectedCasePresenter(selectedCaseViewModel: viewModel)
+        let selectedCaseVC = SelectedCaseViewController(presenter: selectedCasePresenter)
+        self.present(selectedCaseVC, animated: true, completion: nil)
     }
     
 }
