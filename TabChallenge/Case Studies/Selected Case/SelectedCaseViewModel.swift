@@ -9,6 +9,5 @@
 import Foundation
 
 struct SelectedCaseViewModel {
-    let projectName: String
     let selectedCase: CaseStudies
 }

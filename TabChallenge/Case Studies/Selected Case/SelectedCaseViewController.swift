@@ -8,11 +8,10 @@
 
 import UIKit
 
-final class SelectedCaseViewController: UIViewController {
-
-    @IBOutlet private var projectNameLabel: UILabel!
+final class SelectedCaseViewController: UIViewController, SelectedCasePresentable {
     
-    @IBOutlet private var stackview: UIStackView!
+    @IBOutlet private var projectNameLabel: UILabel!
+    @IBOutlet private var tableView: UITableView!
     
     private let presenter: SelectedCasePresenter
     
@@ -25,11 +24,42 @@ final class SelectedCaseViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.view = self
+        presenter.configureClientNameLabel()
+        setupTableView()
+    }
+    
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: "SelectedCaseTableViewCell", bundle: nil), forCellReuseIdentifier: SelectedCaseTableViewCell.reuseIdentifier)
+        
+    }
+    
+    func configureClientNameLabel(with name: String) {
+        projectNameLabel.text = name
+    }
+}
+
+extension SelectedCaseViewController: UITableViewDelegate {
+    
+}
+
+extension SelectedCaseViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return presenter.getNumberOfRowsInSection()
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SelectedCaseTableViewCell.reuseIdentifier, for: indexPath) as? SelectedCaseTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.configureCell(with: presenter.getViewModel())
+        return cell
     }
     
     
-
 }

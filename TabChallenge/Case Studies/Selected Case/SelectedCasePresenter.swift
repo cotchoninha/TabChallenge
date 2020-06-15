@@ -8,11 +8,29 @@
 
 import Foundation
 
+protocol SelectedCasePresentable: AnyObject {
+    func configureClientNameLabel(with name: String)
+}
+
 final class SelectedCasePresenter {
     
-    let selectedCaseViewModel: SelectedCaseViewModel
+    weak var view: SelectedCasePresentable?
+    
+    private let selectedCaseViewModel: SelectedCaseViewModel
     
     init(selectedCaseViewModel: SelectedCaseViewModel) {
         self.selectedCaseViewModel = selectedCaseViewModel
+    }
+    
+    func configureClientNameLabel() {
+        self.view?.configureClientNameLabel(with: selectedCaseViewModel.selectedCase.client?.uppercased() ?? "")
+    }
+    
+    func getViewModel() -> SelectedCaseViewModel {
+        return selectedCaseViewModel
+    }
+    
+    func getNumberOfRowsInSection() -> Int {
+        return selectedCaseViewModel.selectedCase.sections.count
     }
 }

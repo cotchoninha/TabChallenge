@@ -10,7 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectedCaseViewController" customModule="TabChallenge">
             <connections>
                 <outlet property="projectNameLabel" destination="CyR-YI-KL6" id="J68-QV-vSC"/>
-                <outlet property="stackview" destination="FEY-Bm-SCD" id="gr5-q1-YcS"/>
+                <outlet property="tableView" destination="roR-f7-2mX" id="0b0-17-3hU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -44,37 +44,21 @@
                         <constraint firstAttribute="height" constant="1" id="gXP-4X-uxx"/>
                     </constraints>
                 </view>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lwg-O2-1si">
-                    <rect key="frame" x="0.0" y="133" width="414" height="729"/>
-                    <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FEY-Bm-SCD">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="729"/>
-                        </stackView>
-                    </subviews>
-                    <constraints>
-                        <constraint firstAttribute="bottom" secondItem="FEY-Bm-SCD" secondAttribute="bottom" id="CHx-em-7AC"/>
-                        <constraint firstAttribute="height" priority="250" constant="741" id="Cwn-XL-Ixd"/>
-                        <constraint firstItem="FEY-Bm-SCD" firstAttribute="leading" secondItem="QE3-4d-Suv" secondAttribute="leading" id="DeC-r0-YEO"/>
-                        <constraint firstAttribute="trailing" secondItem="FEY-Bm-SCD" secondAttribute="trailing" id="LIh-CB-0sT"/>
-                        <constraint firstItem="QE3-4d-Suv" firstAttribute="trailing" secondItem="FEY-Bm-SCD" secondAttribute="trailing" id="a1J-gj-d3G"/>
-                        <constraint firstItem="FEY-Bm-SCD" firstAttribute="width" secondItem="Lwg-O2-1si" secondAttribute="width" id="inR-u2-dUY"/>
-                        <constraint firstItem="QE3-4d-Suv" firstAttribute="bottom" secondItem="FEY-Bm-SCD" secondAttribute="bottom" id="pMk-Hs-P4Y"/>
-                        <constraint firstItem="FEY-Bm-SCD" firstAttribute="top" secondItem="QE3-4d-Suv" secondAttribute="top" id="zzf-Eq-gpd"/>
-                    </constraints>
-                    <viewLayoutGuide key="contentLayoutGuide" id="q3B-y3-7gR"/>
-                    <viewLayoutGuide key="frameLayoutGuide" id="QE3-4d-Suv"/>
-                </scrollView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="roR-f7-2mX">
+                    <rect key="frame" x="0.0" y="126" width="414" height="736"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="roR-f7-2mX" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="0nF-zq-seO"/>
                 <constraint firstItem="nAp-VC-3mr" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="4j3-d1-Ybb"/>
                 <constraint firstItem="Ny1-Iz-es8" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="8WU-Ea-ha9"/>
-                <constraint firstItem="Lwg-O2-1si" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Y2Y-Hs-RSy"/>
+                <constraint firstItem="roR-f7-2mX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="G7d-x7-YAp"/>
+                <constraint firstItem="roR-f7-2mX" firstAttribute="top" secondItem="Ny1-Iz-es8" secondAttribute="bottom" id="H4p-58-wVM"/>
                 <constraint firstItem="nAp-VC-3mr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bO9-Q8-V13"/>
-                <constraint firstItem="Lwg-O2-1si" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="cMb-KL-yoa"/>
-                <constraint firstItem="Lwg-O2-1si" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="e5Q-GN-eVY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="roR-f7-2mX" secondAttribute="bottom" id="l9K-cT-mCW"/>
                 <constraint firstItem="Ny1-Iz-es8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nmn-Du-O1f"/>
-                <constraint firstItem="Lwg-O2-1si" firstAttribute="top" secondItem="Ny1-Iz-es8" secondAttribute="bottom" constant="7" id="sRM-VE-S0v"/>
                 <constraint firstItem="nAp-VC-3mr" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="usE-up-qcI"/>
                 <constraint firstItem="Ny1-Iz-es8" firstAttribute="top" secondItem="nAp-VC-3mr" secondAttribute="bottom" constant="-0.5" id="z3t-Vq-2eD"/>
             </constraints>

@@ -49,7 +49,7 @@ final class AllCasesPresenter {
     }
     
     func getSelectedCaseViewModel(atRow: Int) -> SelectedCaseViewModel {
-        let viewModel = SelectedCaseViewModel(projectName: viewModels[atRow].clientName, selectedCase: caseStudies[atRow])
+        let viewModel = SelectedCaseViewModel(selectedCase: caseStudies[atRow])
         return viewModel
     }
     
