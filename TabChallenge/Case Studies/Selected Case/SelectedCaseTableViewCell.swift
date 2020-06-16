@@ -8,33 +8,34 @@
 
 import UIKit
 
-class SelectedCaseTableViewCell: UITableViewCell {
-
+final class SelectedCaseTableViewCell: UITableViewCell {
+    
     @IBOutlet private var stackview: UIStackView!
     
     static let reuseIdentifier = "selectedCaseTableViewCell"
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
-    func configureCell(with viewModel: SelectedCaseViewModel) {
-        viewModel.selectedCase.sections.forEach { section in
-                 if section.title != nil {
-                     configureTitleLabel(with: section.title!)
-                 }
-                 section.bodyElements.forEach { bodyElement in
-                     switch bodyElement {
-                     case .title(let title):
-                         configureBodyText(with: title)
-                     case .bodyImage(_):
-                         break
-                     }
-                 }
-             }
-         }
-
+    func configureCell(with section: Section) {
+        stackview.arrangedSubviews.forEach { view in
+            view.removeFromSuperview()
+        }
+        if section.title != nil {
+            configureTitleLabel(with: section.title!)
+        }
+        section.bodyElements.forEach { bodyElement in
+            switch bodyElement {
+            case .bodyText(let bodyText):
+                configureBodyText(with: bodyText)
+            case .bodyImage(let bodyImage):
+                configureBodyImage(with: bodyImage.imageURL)
+            }
+        }
+    }
+    
     private func configureTitleLabel(with title: String) {
         let titleLabel = PaddingLabel()
         stackview.addArrangedSubview(titleLabel)
@@ -57,8 +58,19 @@ class SelectedCaseTableViewCell: UITableViewCell {
         bodyTextLabel.textColor = .darkGray
     }
     
-    private func configureBodyElements() {
+    private func configureBodyImage(with url: String) {
+        let bodyImage = ImageLoader()
+
+        guard let url = URL(string: url) else {
+            return
+        }
+        stackview.addArrangedSubview(bodyImage)
+        bodyImage.loadImageWithUrl(url)
+        bodyImage.translatesAutoresizingMaskIntoConstraints = false
+        let constraints = [bodyImage.heightAnchor.constraint(equalToConstant: 150)]
+        NSLayoutConstraint.activate(constraints)
+        bodyImage.contentMode = .scaleAspectFit
+        bodyImage.layer.cornerRadius = 10.0
         
     }
-    
 }

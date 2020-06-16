@@ -10,7 +10,7 @@ import Foundation
 
 struct Projects: Decodable, Equatable {
     
-    let caseStudies: [CaseStudies]
+    let caseStudies: [CaseStudy]
     
     enum CodingKeys: String, CodingKey {
         case caseStudies = "case_studies"
@@ -18,7 +18,7 @@ struct Projects: Decodable, Equatable {
 
 }
 
-struct CaseStudies: Decodable, Equatable {
+struct CaseStudy: Decodable, Equatable {
     let id: Int
     let client: String?
     let teaser: String
@@ -26,7 +26,7 @@ struct CaseStudies: Decodable, Equatable {
     let isEnterprise: Bool
     let title: String
     let heroImage: String
-    let sections: [Sections]
+    let sections: [Section]
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -40,7 +40,7 @@ struct CaseStudies: Decodable, Equatable {
     }
 }
 
-struct Sections: Decodable, Equatable {
+struct Section: Decodable, Equatable {
     let title: String?
     let bodyElements: [BodyElement]
     
@@ -53,12 +53,12 @@ struct Sections: Decodable, Equatable {
 
 enum BodyElement: Codable, Equatable {
     case bodyImage(BodyImage)
-    case title(String)
+    case bodyText(String)
 
     init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         if let title = try? container.decode(String.self) {
-            self = .title(title)
+            self = .bodyText(title)
             return
         }
         if let bodyImage = try? container.decode(BodyImage.self) {
@@ -73,7 +73,7 @@ enum BodyElement: Codable, Equatable {
         switch self {
         case .bodyImage(let bodyImage):
             try container.encode(bodyImage)
-        case .title(let title):
+        case .bodyText(let title):
             try container.encode(title)
         }
     }

@@ -9,5 +9,5 @@
 import Foundation
 
 struct SelectedCaseViewModel {
-    let selectedCase: CaseStudies
+    let selectedCase: CaseStudy
 }

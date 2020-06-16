@@ -18,7 +18,7 @@ final class AllCasesPresenter {
     
     private var viewModels: [AllCasesViewModel] = []
     private let networkOperations: NetworkOperations
-    private var caseStudies: [CaseStudies] = []
+    private var caseStudies: [CaseStudy] = []
     
     init(networkOperations: NetworkOperations = NetworkOperations()) {
         self.networkOperations = networkOperations

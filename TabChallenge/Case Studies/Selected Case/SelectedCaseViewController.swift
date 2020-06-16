@@ -32,19 +32,13 @@ final class SelectedCaseViewController: UIViewController, SelectedCasePresentabl
     }
     
     private func setupTableView() {
-        tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "SelectedCaseTableViewCell", bundle: nil), forCellReuseIdentifier: SelectedCaseTableViewCell.reuseIdentifier)
-        
     }
     
     func configureClientNameLabel(with name: String) {
         projectNameLabel.text = name
     }
-}
-
-extension SelectedCaseViewController: UITableViewDelegate {
-    
 }
 
 extension SelectedCaseViewController: UITableViewDataSource {
@@ -57,7 +51,8 @@ extension SelectedCaseViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SelectedCaseTableViewCell.reuseIdentifier, for: indexPath) as? SelectedCaseTableViewCell else {
             return UITableViewCell()
         }
-        cell.configureCell(with: presenter.getViewModel())
+        let model = presenter.getSection(with: indexPath.row)
+        cell.configureCell(with: model)
         return cell
     }
     
