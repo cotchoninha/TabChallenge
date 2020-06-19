@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct AllCasesViewModel {
+struct AllCasesViewModel: Equatable {
     
     let clientName: String
     let clientImage: String

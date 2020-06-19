@@ -12,7 +12,7 @@ import UIKit
 
 class PaddingLabel: UILabel {
     
-    /// set UIEdgeInsets of textInsets to apply padding to label
+    /// set UIEdgeInsets of text insets to apply label padding
     /// 
     /// - Usage: label.textInsets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
     var textInsets = UIEdgeInsets.zero {

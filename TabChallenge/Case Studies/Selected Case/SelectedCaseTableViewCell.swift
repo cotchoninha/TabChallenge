@@ -20,6 +20,7 @@ final class SelectedCaseTableViewCell: UITableViewCell {
     }
     
     func configureCell(with section: Section) {
+        //remove all views from superview before adding views to the stackview
         stackview.arrangedSubviews.forEach { view in
             view.removeFromSuperview()
         }

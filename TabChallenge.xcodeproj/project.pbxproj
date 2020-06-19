@@ -31,6 +31,8 @@
 		3BC22552248671AA000080B8 /* AllCasesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC22550248671AA000080B8 /* AllCasesViewController.swift */; };
 		3BC22553248671AA000080B8 /* AllCasesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BC22551248671AA000080B8 /* AllCasesViewController.xib */; };
 		3BF8B87724979CE70012B72E /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF8B87624979CE70012B72E /* PaddingLabel.swift */; };
+		3BF8B879249A6D110012B72E /* AllCasesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF8B878249A6D110012B72E /* AllCasesPresenterTests.swift */; };
+		3BF8B87B249A703F0012B72E /* ProjectsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF8B87A249A703F0012B72E /* ProjectsResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		3BC22550248671AA000080B8 /* AllCasesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCasesViewController.swift; sourceTree = "<group>"; };
 		3BC22551248671AA000080B8 /* AllCasesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllCasesViewController.xib; sourceTree = "<group>"; };
 		3BF8B87624979CE70012B72E /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		3BF8B878249A6D110012B72E /* AllCasesPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCasesPresenterTests.swift; sourceTree = "<group>"; };
+		3BF8B87A249A703F0012B72E /* ProjectsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,8 +142,8 @@
 				3B83B71524911F87009CF652 /* SelectedCaseViewModel.swift */,
 				3B83B7172491205A009CF652 /* SelectedCasePresenter.swift */,
 				3B2CC3AD248BEAF800A3E187 /* SelectedCaseViewController.swift */,
-				3B2CC3AE248BEAF800A3E187 /* SelectedCaseViewController.xib */,
 				3B83B71F24938509009CF652 /* SelectedCaseTableViewCell.swift */,
+				3B2CC3AE248BEAF800A3E187 /* SelectedCaseViewController.xib */,
 				3B83B72024938509009CF652 /* SelectedCaseTableViewCell.xib */,
 			);
 			path = "Selected Case";
@@ -185,6 +189,8 @@
 			children = (
 				3BC2252F2484FB8C000080B8 /* Info.plist */,
 				3BC2254B24859F78000080B8 /* NetworkOperationsTests.swift */,
+				3BF8B878249A6D110012B72E /* AllCasesPresenterTests.swift */,
+				3BF8B87A249A703F0012B72E /* ProjectsResponse.swift */,
 			);
 			path = TabChallengeTests;
 			sourceTree = "<group>";
@@ -373,6 +379,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BF8B87B249A703F0012B72E /* ProjectsResponse.swift in Sources */,
+				3BF8B879249A6D110012B72E /* AllCasesPresenterTests.swift in Sources */,
 				3BC2254C24859F78000080B8 /* NetworkOperationsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

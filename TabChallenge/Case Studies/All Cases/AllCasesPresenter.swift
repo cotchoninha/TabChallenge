@@ -17,10 +17,10 @@ final class AllCasesPresenter {
     weak var view: AllCassesViewPresentable?
     
     private var viewModels: [AllCasesViewModel] = []
-    private let networkOperations: NetworkOperations
+    private let networkOperations: NetworkOperationsProtocol
     private var caseStudies: [CaseStudy] = []
     
-    init(networkOperations: NetworkOperations = NetworkOperations()) {
+    init(networkOperations: NetworkOperationsProtocol = NetworkOperations()) {
         self.networkOperations = networkOperations
     }
     
@@ -34,14 +34,14 @@ final class AllCasesPresenter {
                 print("there are no caseStudies available")
                 return
             }
+            print(caseStudies)
             self.caseStudies = caseStudies
-            caseStudies.forEach({ caseStudie in
-                let vm = AllCasesViewModel(clientName: caseStudie.client ?? "", clientImage: caseStudie.heroImage, teaser: caseStudie.teaser)
-                
-                self.viewModels.append(vm)
+            self.viewModels = caseStudies.map({ caseStudie in
+                return AllCasesViewModel(clientName: caseStudie.client ?? "", clientImage: caseStudie.heroImage, teaser: caseStudie.teaser)
             })
             self.view?.reloadData()
         }
+        print("debuging breakpoint")
     }
     
     func getViewModels() -> [AllCasesViewModel] {

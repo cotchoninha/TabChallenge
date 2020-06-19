@@ -1,6 +1,11 @@
 import Foundation
 
-final class NetworkOperations {
+protocol NetworkOperationsProtocol: AnyObject {
+    func requestCaseStudies(completionHandler: @escaping ( _ projects: Projects?, _ error: Error?) -> Void)
+    func loadImage(url: String, completion: @escaping (_ data: Data?, _ error: Error?) -> ())
+}
+
+final class NetworkOperations: NetworkOperationsProtocol {
     
     typealias projectsResponse = ( _ projects: Projects?, _ error: Error?) -> Void
     typealias imageDataResponse = (_ data: Data?, _ error: Error?) -> ()

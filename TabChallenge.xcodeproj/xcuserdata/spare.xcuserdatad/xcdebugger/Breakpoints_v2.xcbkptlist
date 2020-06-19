@@ -3,4 +3,166 @@
    uuid = "3E29C2B8-091C-42E6-819A-0B5A6EFCB8E5"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "81A72C9D-6D6A-4FDD-9310-33D901D58E91"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TabChallenge/Case Studies/All Cases/AllCasesPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "loadCaseStudies()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "81A72C9D-6D6A-4FDD-9310-33D901D58E91 - 902a1a5702ea797c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;TabChallenge.Projects&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TabChallenge.AllCasesPresenter.loadCaseStudies() -&gt; ()"
+                  moduleName = "TabChallenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/spare/Documents/TabChallenge/TabChallenge/Case%20Studies/All%20Cases/AllCasesPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "1820">
+               </Location>
+               <Location
+                  uuid = "81A72C9D-6D6A-4FDD-9310-33D901D58E91 - 4f0bd564df20240"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (TabChallenge.CaseStudy) -&gt; TabChallenge.AllCasesViewModel in closure #1 (Swift.Optional&lt;TabChallenge.Projects&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TabChallenge.AllCasesPresenter.loadCaseStudies() -&gt; ()"
+                  moduleName = "TabChallenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/spare/Documents/TabChallenge/TabChallenge/Case%20Studies/All%20Cases/AllCasesPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "46">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "23B75F10-7D12-435D-8593-30F4CF7685AF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TabChallengeTests/AllCasesPresenterTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "test_loadCaseStudies_withSuccessResponse()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "005BA623-F11D-420C-9BFB-C164135250D8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TabChallenge/Case Studies/All Cases/AllCasesPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "loadCaseStudies()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "005BA623-F11D-420C-9BFB-C164135250D8 - ae740a3138b294b6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TabChallenge.AllCasesPresenter.loadCaseStudies() -&gt; ()"
+                  moduleName = "TabChallenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/spare/Documents/TabChallenge/TabChallenge/Case%20Studies/All%20Cases/AllCasesPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "22">
+               </Location>
+               <Location
+                  uuid = "005BA623-F11D-420C-9BFB-C164135250D8 - 902a1a5702ea797c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;TabChallenge.Projects&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TabChallenge.AllCasesPresenter.loadCaseStudies() -&gt; ()"
+                  moduleName = "TabChallenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/spare/Documents/TabChallenge/TabChallenge/Case%20Studies/All%20Cases/AllCasesPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "149">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "582EA1A7-0CCC-4D93-AE27-34675AAAE5B4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TabChallenge/Case Studies/All Cases/AllCasesPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "loadCaseStudies()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8D88949E-2463-44F2-A0BC-FBE45FA3DC08"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TabChallenge/Case Studies/All Cases/AllCasesPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "loadCaseStudies()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F74A972B-08CE-4760-AB9E-9C4A1618F725"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TabChallenge/Case Studies/All Cases/AllCasesPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "loadCaseStudies()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
