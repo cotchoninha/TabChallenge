@@ -1,23 +1,29 @@
 import Foundation
 
 protocol NetworkOperationsProtocol: AnyObject {
-    func requestCaseStudies(completionHandler: @escaping ( _ projects: Projects?, _ error: Error?) -> Void)
-    func loadImage(url: String, completion: @escaping (_ data: Data?, _ error: Error?) -> ())
+    func requestCaseStudies(completionHandler: @escaping (Result<Projects, Error>) -> Void)
+    func loadImage(url: String, completion: @escaping (Result<Data, Error>) -> Void)
 }
+
+protocol URLSessionType: AnyObject {
+    func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask
+}
+
+extension URLSession: URLSessionType {}
 
 final class NetworkOperations: NetworkOperationsProtocol {
     
-    typealias projectsResponse = ( _ projects: Projects?, _ error: Error?) -> Void
-    typealias imageDataResponse = (_ data: Data?, _ error: Error?) -> ()
-    private let session: URLSession
+    typealias ProjectsResponse = (Result<Projects, Error>) -> Void
+    typealias ImageDataResponse = (Result<Data, Error>) -> Void
+    private let session: URLSessionType
     
-    init(session: URLSession = URLSession.shared) {
+    init(session: URLSessionType = URLSession.shared) {
         self.session = session
     }
     
     private let caseStudiesUrl = "https://raw.githubusercontent.com/theappbusiness/engineering-challenge/master/endpoints/v1/caseStudies.json"
     
-    func requestCaseStudies(completionHandler: @escaping projectsResponse) {
+    func requestCaseStudies(completionHandler: @escaping ProjectsResponse) {
         
         guard let url = URL(string: caseStudiesUrl) else {
             print("Invalid URL")
@@ -29,7 +35,7 @@ final class NetworkOperations: NetworkOperationsProtocol {
         session.dataTask(with: request) { data, _, error in
             
             if let error = error {
-                completionHandler(nil, error)
+                completionHandler(.failure(error))
                 return
             }
             guard let data = data else {
@@ -40,7 +46,7 @@ final class NetworkOperations: NetworkOperationsProtocol {
                 let decodedResponse = try JSONDecoder().decode(Projects.self, from: data)
                 
                 DispatchQueue.main.async {
-                    completionHandler(decodedResponse, nil)
+                    completionHandler(.success(decodedResponse))
                     
                 }
             } catch {
@@ -50,7 +56,7 @@ final class NetworkOperations: NetworkOperationsProtocol {
         }.resume()
     }
     
-    func loadImage(url: String, completion: @escaping imageDataResponse) {
+    func loadImage(url: String, completion: @escaping ImageDataResponse) {
         
         guard let url = URL(string: url) else {
             print("Invalid URL")
@@ -62,7 +68,7 @@ final class NetworkOperations: NetworkOperationsProtocol {
         session.dataTask(with: request) { data, _, error in
             
             if let error = error {
-                completion(nil, error)
+                completion(.failure(error))
                 return
             }
             
@@ -71,7 +77,7 @@ final class NetworkOperations: NetworkOperationsProtocol {
                 return
             }
             DispatchQueue.main.async {
-                completion(data, nil)
+                completion(.success(data))
             }
             
         }.resume()

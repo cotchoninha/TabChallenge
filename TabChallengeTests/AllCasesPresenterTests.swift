@@ -15,7 +15,7 @@ class AllCasesPresenterTests: XCTestCase {
     var mockNetworkOperations: MockNetworkOperations!
 
     override func setUp() {
-        mockNetworkOperations = MockNetworkOperations(projectsResponse: .successReponse(createMockReponse()))
+        mockNetworkOperations = MockNetworkOperations(projectsResponse: .successReponse(HelperClass.createMockReponse()))
         presenter = AllCasesPresenter(networkOperations: mockNetworkOperations)
     }
 
@@ -57,16 +57,16 @@ class MockNetworkOperations: NetworkOperationsProtocol {
         self.projectsResponse = projectsResponse
     }
     
-    func requestCaseStudies(completionHandler: @escaping (Projects?, Error?) -> Void) {
+    func requestCaseStudies(completionHandler: @escaping (Result<Projects, Error>) -> Void) {
         switch projectsResponse {
         case .successReponse(let project):
-            return completionHandler(project, nil)
+            return completionHandler(.success(project))
         case .error(let error):
-            return completionHandler(nil, error)
+            return completionHandler(.failure(error))
         }
     }
     
-    func loadImage(url: String, completion: @escaping (Data?, Error?) -> ()) {
+    func loadImage(url: String, completion: @escaping (Result<Data, Error>) -> Void) {
         print("called loadImage")
     }
 }

@@ -13,7 +13,7 @@ class SelectedCasePresenterTests: XCTestCase {
     
     var selectedCasePresenter: SelectedCasePresenter!
     var view: SelectedCaseView!
-    let response = createMockReponse()
+    let response = HelperClass.createMockReponse()
 
     override func setUp() {
         view = SelectedCaseView()

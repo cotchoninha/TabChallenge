@@ -25,23 +25,19 @@ final class AllCasesPresenter {
     }
     
     func loadCaseStudies() {
-        networkOperations.requestCaseStudies { projects, error in
-            if error != nil {
-                print("SHOW ERROR ALERT TO USER WITH RETRY BUUTTON \(error?.localizedDescription)")
-                return
-            }
-            guard let caseStudies = projects?.caseStudies else {
-                print("there are no caseStudies available")
-                return
-            }
-            print(caseStudies)
-            self.caseStudies = caseStudies
-            self.viewModels = caseStudies.map({ caseStudie in
-                return AllCasesViewModel(clientName: caseStudie.client ?? "", clientImage: caseStudie.heroImage, teaser: caseStudie.teaser)
+        networkOperations.requestCaseStudies { result in
+            
+            switch result {
+            case .failure(let error):
+                print("SHOW ERROR ALERT TO USER WITH RETRY BUUTTON \(error.localizedDescription)")
+            case .success(let projects):
+                self.caseStudies = projects.caseStudies
+                self.viewModels = self.caseStudies.map({ caseStudie in
+                    return AllCasesViewModel(clientName: caseStudie.client ?? "", clientImage: caseStudie.heroImage, teaser: caseStudie.teaser)
             })
+        }
             self.view?.reloadData()
         }
-        print("debuging breakpoint")
     }
     
     func getViewModels() -> [AllCasesViewModel] {
