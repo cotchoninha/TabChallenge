@@ -29,8 +29,3 @@ jobs:
           xcodebuild clean build -project TabChallenge.xcodeproj -scheme TabChallenge -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
         env: 
          destination: ${{ matrix.destination }}
-      - name: Test
-        run: |
-          xcodebuild clean test -project TabChallenge.xcodeproj -scheme TabChallengeTests -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
-        env: 
-         destination: ${{ matrix.destination }}
