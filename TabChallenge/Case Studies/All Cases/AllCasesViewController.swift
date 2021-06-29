@@ -20,6 +20,7 @@ final class AllCasesViewController: UIViewController, AllCassesViewPresentable {
         setupTableView()
         presenter.view = self
         presenter.loadCaseStudies()
+        view.backgroundColor = .gray
     }
     
     private func setupTableView() {
