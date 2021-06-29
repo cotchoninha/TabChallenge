@@ -75,10 +75,10 @@ class MockURLSession: URLSessionType {
     func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
         switch dataResponse {
         case .success(let data):
-            
+            completionHandler(data, nil, nil)
         case .error(let error):
             completionHandler(nil, nil, error)
         }
-        return
+        return URLSessionDataTask()
     }
 }

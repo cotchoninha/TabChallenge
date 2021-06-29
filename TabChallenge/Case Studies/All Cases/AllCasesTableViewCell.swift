@@ -17,8 +17,6 @@ final class AllCasesTableViewCell: UITableViewCell {
     
     static let reuseIdentifier = "allCasesTableViewCell"
     
-    private var presenter = AllCasesPresenter()
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupContainerView()
